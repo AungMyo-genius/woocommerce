@@ -1,0 +1,154 @@
+[x-cloak] {
+  display: none;
+}
+
+body {
+  background-color: color(background);
+  color: color(text);
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .elementor-column-gap-default
+    > .elementor-column
+    > .elementor-element-populated {
+    padding: 0;
+  }
+}
+
+svg[id^="mdi"] {
+  fill: currentColor;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+[data-src]:not[src] {
+  position: relative;
+  opacity: 0;
+  transition: opacity 200ms map-get($easing, "swift");
+
+  &.loaded {
+    opacity: 1;
+  }
+}
+
+span.inlineSVGIcon {
+  line-height: 0;
+}
+
+a {
+  display: inline-flex;
+  color: color(main);
+  @include transition(all $time $ease);
+  cursor: pointer;
+
+  &,
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+// responsive embeds
+.video-container,
+figure.wp-block-embed {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+
+  iframe,
+  embed,
+  object,
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// images
+img {
+  &,
+  &.img-responsive {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.selleradise {
+  .woocommerce table.shop_table {
+    border: none;
+    background-color: color(background);
+    border-collapse: collapse;
+    border-radius: var(--border-radius-half);
+    overflow: hidden;
+    border: 0;
+
+    a {
+      color: color(main);
+      font-weight: font("primary_bolder", "font-weight");
+    }
+
+    th,
+    td {
+      font-size: 1rem;
+      padding: 1rem;
+      border: none;
+      border-bottom: 0.05rem solid rgba(color(text-rgb), 0.05);
+    }
+
+    th {
+      font-weight: font("primary_boldest", "font-weight");
+      line-height: inherit;
+    }
+
+    thead {
+      color: color(text);
+      border: none;
+    }
+  }
+
+  .woocommerce button.button {
+    @extend .selleradise_button--base;
+  }
+}
+
+.page-template-homepage {
+  .elementor-section.elementor-section-boxed > .elementor-container {
+    max-width: none;
+  }
+}
+
+.site-content {
+  --padding-top: var(--header-height);
+
+  .woocommerce-checkout & {
+    --padding-top: calc(var(--header-height) + 2.5rem);
+  }
+
+  padding-top: var(--padding-top);
+}
+
+// Customize text selection
+::selection {
+  background: color(text);
+  color: color(background);
+}
+
+::-moz-selection {
+  background: color(text);
+  color: color(background);
+}

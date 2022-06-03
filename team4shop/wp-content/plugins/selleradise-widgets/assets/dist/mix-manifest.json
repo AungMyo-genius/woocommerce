@@ -1,0 +1,13 @@
+{
+    "/js/widgets.js": "/js/widgets.js",
+    "/js/widgets/categories.js": "/js/widgets/categories.js",
+    "/js/widgets/products.js": "/js/widgets/products.js",
+    "/js/widgets/sale-timer.js": "/js/widgets/sale-timer.js",
+    "/js/widgets/posts.js": "/js/widgets/posts.js",
+    "/js/widgets/faq.js": "/js/widgets/faq.js",
+    "/js/widgets/testimonials.js": "/js/widgets/testimonials.js",
+    "/js/widgets/promo-cards.js": "/js/widgets/promo-cards.js",
+    "/js/widgets/hero.js": "/js/widgets/hero.js",
+    "/js/widgets/cta.js": "/js/widgets/cta.js",
+    "/js/widgets/tabs.js": "/js/widgets/tabs.js"
+}

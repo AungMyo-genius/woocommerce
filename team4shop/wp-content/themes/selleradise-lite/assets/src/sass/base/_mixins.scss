@@ -1,0 +1,116 @@
+@mixin font-size($size) {
+  @if $size == display {
+    font-size: 4rem;
+  } @else if $size == h1 {
+    font-size: 3.052rem;
+  } @else if $size == h2 {
+    font-size: 2.441rem;
+  } @else if $size == h3 {
+    font-size: 1.953rem;
+  } @else if $size == h4 {
+    font-size: 1.563rem;
+  } @else if $size == h5 {
+    font-size: 1.25rem;
+  } @else if $size == p or $size == h6 {
+    font-size: 1rem;
+  } @else if $size == small {
+    font-size: 0.8rem;
+  } @else if $size == x-small {
+    font-size: 0.64rem;
+  } @else if $size == xx-small {
+    font-size: 0.512rem;
+  }
+}
+
+@mixin device($point) {
+  @if $point == mobile {
+    @media (max-width: 767px) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (min-width: 768px) and (max-width: 1024px) {
+      @content;
+    }
+  } @else if $point == mobileAndTablet {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $point == desktop {
+    @media (min-width: 1025px) {
+      @content;
+    }
+  } @else if $point == desktopAndTablet {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+}
+
+@mixin focus-source-key {
+  :root[data-focus-source="key"] {
+    @content;
+  }
+}
+
+@mixin focus-outline($color: main) {
+  :root[data-focus-source="key"] &:focus {
+    transition: none;
+    outline: 0.15rem dashed color($color);
+    outline-offset: 0.2rem;
+  }
+}
+
+@mixin font($type: "primary") {
+  font-weight: font($type, "font-weight");
+  font-family: font($type, "font-family");
+}
+
+@mixin mode($type: dark) {
+  :root[data-selleradise-theme-type="#{$type}"] & {
+    @content;
+  }
+}
+
+@mixin scroll_animate($state: initial) {
+  @if $state == initial {
+    &.selleradise_scroll_animate {
+      @content;
+    }
+  } @else if $state == entered {
+    &[data-scroll-entered="true"] {
+      @content;
+    }
+  }
+}
+
+@mixin transition($val...) {
+  -webkit-transition: $val;
+  -moz-transition: $val;
+  -ms-transition: $val;
+  -o-transition: $val;
+  transition: $val;
+}
+
+@mixin transition-delay($val) {
+  -webkit-transition-delay: $val;
+  -moz-transition-delay: $val;
+  -ms-transition-delay: $val;
+  -o-transition-delay: $val;
+  transition-delay: $val;
+}
+
+@mixin transform($val...) {
+  -webkit-transform: $val;
+  -moz-transform: $val;
+  -ms-transform: $val;
+  -o-transform: $val;
+  transform: $val;
+}
+
+@mixin transform-origin($val) {
+  -webkit-transform-origin: $val;
+  -moz-transform-origin: $val;
+  -ms-transform-origin: $val;
+  -o-transform-origin: $val;
+  transform-origin: $val;
+}
